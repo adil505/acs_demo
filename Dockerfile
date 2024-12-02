@@ -4,7 +4,7 @@ FROM nginx:alpine
 # Copy application files to the default Nginx web root
 COPY index.html /usr/share/nginx/html/index.html
 COPY message.txt /usr/share/nginx/html/message.txt
-COPY vfz.png /usr/share/nginx/html/vfz.png
+COPY image.png /usr/share/nginx/html/image.png
 
 # Expose port 80 for web traffic
 EXPOSE 80
