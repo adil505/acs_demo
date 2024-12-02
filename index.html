@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Nginx Application</h1>
+    <p>Enjoy the picture below:</p>
+    <img src="./vfz.png" alt="Welcome Image">
+    <p class="message" id="text-message">Loading message...</p>
+
+    <script>
+        // Fetch the text content from the text file and display it
+        fetch('./message.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('text-message').textContent = data;
+            })
+            .catch(error => {
+                document.getElementById('text-message').textContent = "Failed to load message.";
+                console.error('Error loading message:', error);
+            });
+    </script>
+</body>
+</html>
